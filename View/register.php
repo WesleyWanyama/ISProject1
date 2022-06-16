@@ -11,6 +11,16 @@
 	</head>
 	<body>
 		<h3>WEDKF</h3>
+		<!--NAV BAR-->
+		<div class="topnav" id="myTopnav">
+	  <a href="#home" class="active">Home</a>
+      <a href="#news">About Us</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">FAQs</a>
+	  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+       </a>
+     </div>
 		
 		<div class="registration_form">
 		<span class="badge bg-warning text-dark">Create Account</span><br><br>
@@ -45,6 +55,8 @@
 
 		</form>
 	</div>
+	
+	
 	</body>
 </html>
 <script src="javascript/register.js"></script>
