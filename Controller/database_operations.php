@@ -1,6 +1,7 @@
 <?php
 
 //Database class to perform CRUD operations
+
 class Database
 {
 	private $conn;

@@ -23,7 +23,7 @@
 		
 		<div class="registration_form">
 		<span class="badge bg-warning text-dark">Create Account</span><br><br>
-		<form action="C:/xamp/htdocs/ISProject1/Controller/database_operations.php" method="POST" enctype="multipart/form-data">
+		<form action="/ISProject1/Controller/database_operations.php" method="POST" enctype="multipart/form-data">
 
 		<label for="firstname">Enter your First name</label><br/>
 		<input type="text" name="first_name" required minlength="3" maxlength="30" /><br/><br/>
