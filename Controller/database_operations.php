@@ -44,6 +44,7 @@ class Database
     	}else{
     		echo "Failed to insert data";
     	}
+    }
 }
 
 //Object that will be used in other files

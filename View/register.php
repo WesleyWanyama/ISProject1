@@ -32,7 +32,7 @@
 		<input type="text" name="last_name" required  /><br/><br/>
 
 		<label for="nationalid">Enter your National ID Number</label><br/>
-		<input type="number" name="national_id_number" min="8" max="8" required/><br/><br/>
+		<input type="number" name="national_id_number" min="0000000000" max="99999999" required/><br/><br/>
 
 		<label for="userpassword">Enter your Password</label><br/>
 		<input type="password" name="password" required/><br/><br/>
