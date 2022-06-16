@@ -1,4 +1,4 @@
-<?php?>
+<?php require_once('Controller/database.php'); ?>
 
 <!DOCTYPE html>
 <html>
@@ -22,7 +22,7 @@
 		<label for="lastname">Enter your Last name</label><br/>
 		<input type="text" name="last_name" required  /><br/><br/>
 
-		<label for="othername">Enter your National ID Number</label><br/>
+		<label for="nationalid">Enter your National ID Number</label><br/>
 		<input type="number" name="national_id_number" min="8" max="8" required/><br/><br/>
 
 		<label for="userpassword">Enter your Password</label><br/>
@@ -30,7 +30,7 @@
 
 		<label for="profilepicture">Upload Profile Picture</label><br/>
 
-        <!-- PROFILE PICTURE UPLOAD -->
+        <!-- PROFILE PICTURE UPLOAD 
         <div class="form-group text-center">
             <span class="img-div">
               <div class="text-center img-placeholder"  onClick="triggerClick()">
@@ -40,6 +40,9 @@
             </span>
             <input type="file" name="profile_picture" onChange="displayImage(this)" id="profileImage" class="form-control" style="display: none;">
           </div>
+        -->
+
+        <input type="file" name="profile_picture" required>
         
         <input type="submit" value="Sign Up" class="btn btn-success" />
 
