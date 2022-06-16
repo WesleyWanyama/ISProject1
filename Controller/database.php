@@ -29,11 +29,27 @@ class Database
     //Method to insert the above data into the database
     public function create($first_name,$last_name,$national_id_number,$password,$profile_picture){
     	$sql = "INSERT INTO 'rider' (first_name,last_name,national_id_number,password,profile_picture) VALUES ('$first_name','$last_name', '$national_id_number', '$password', '$profile_picture')";
+    	$result = mysqli_query($this->connection. $sql);
+    	if($result){
+    		return true;
+    	}
+    	else{
+    		return false;
+    	}
     	
     }
 }
 
 //Object that will be used in other files
-database = new Database();
+$database = new Database();
 $database->connect_db();
+
+//Loading create method by passing the sanitized data.
+$result = $database->create($first_name,$last_name,$national_id_number,$password,$profile_picture);
+if($result){
+	echo "Successfully inserted data";
+}
+esle{
+	echo "failed to insert data";
+}
 ?>
