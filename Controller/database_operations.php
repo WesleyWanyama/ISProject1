@@ -7,8 +7,8 @@ class Database
 
 	//Method used to connect to the database 
 	public function connect_db(){
-		$this->conn  = mysqli_connect('localhost:8080','root','','is_project1');
-		if(mysqli_connect_error){
+		$this->conn  = mysqli_connect('127.0.0.1','root','','is_project1');
+		if(mysqli_connect_error()){
 	die("Database Connection Failed" . mysqli_connect_error() . mysqli_connect_error());
 }
 }
@@ -37,20 +37,18 @@ class Database
     	else{
     		return false;
     	}
-    	
-    }
+    	//Loading create method by passing the sanitized data.
+    	$result = $database->create($first_name,$last_name,$national_id_number,$password,$profile_picture);
+    	if($result){
+    		echo "Successfully inserted data";
+    	}else{
+    		echo "Failed to insert data";
+    	}
 }
 
 //Object that will be used in other files
 $database = new Database();
 $database->connect_db();
 
-//Loading create method by passing the sanitized data.
-$result = $database->create($first_name,$last_name,$national_id_number,$password,$profile_picture);
-if($result){
-	echo "Successfully inserted data";
-}
-else{
-	echo "failed to insert data";
-}
+
 ?>

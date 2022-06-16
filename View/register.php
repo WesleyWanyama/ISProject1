@@ -10,7 +10,6 @@
 	    <title>Sign Up</title>
 	</head>
 	<body>
-		<h3>WEDKF</h3>
 		<!--NAV BAR-->
 		<div class="topnav" id="myTopnav">
 	  <a href="#home" class="active">Home</a>
