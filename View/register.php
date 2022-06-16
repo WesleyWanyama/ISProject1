@@ -1,4 +1,4 @@
-<?php require_once('ISProject1/Controller/database.php'); ?>
+<?php require_once('Controller/database_operations.php'); ?>
 
 <!DOCTYPE html>
 <html>
