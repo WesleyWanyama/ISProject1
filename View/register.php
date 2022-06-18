@@ -50,7 +50,7 @@
           </div>
         -->
 
-        <input type="file" name="profile_picture" required>
+        <input type="file" name="profile_picture" required><br><br>
         
         <input type="submit" value="Sign Up" class="btn btn-success" />
 
