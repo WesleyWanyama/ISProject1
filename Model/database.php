@@ -28,12 +28,12 @@ class Database
         //path to store the uploaded image
         $target = "images/". basename($_FILES['profile_picture']['name']);
 
-        $image = $_FILES['$profile_picture']['name'];
+        $image = $_FILES['profile_picture']['name'];
 
     	$sql = "INSERT INTO rider (first_name,last_name,national_id_number,password,profile_picture) VALUES ('$first_name','$last_name','$national_id_number','$password','$target')";
     	$result = mysqli_query($this->conn,$sql);
     	if($result){
-    		return true;x1
+    		return true;
     	}else{
 
     		return false;
