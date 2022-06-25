@@ -22,7 +22,7 @@
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
 
-                <form>
+                <form action="/ISProject1/Controller/rider_session.php" method="POST" enctype="multipart/form-data">
 
                   <div class="d-flex align-items-center mb-3 pb-1">
                     <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
@@ -32,20 +32,19 @@
                   <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
 
                   <div class="form-outline mb-4">
-                  	<input type="number" name="national_id_number" min="0000000000" max="99999999" class="form-control form-control-lg" />
+                  	<input type="text" name="national_id_number" pattern="[1-9][0-9]{0,8}" class="form-control form-control-lg" />
                     <label class="form-label" for="nationalid">National ID Number</label>
                   </div>
 
                   <div class="form-outline mb-4">
-                    <input type="password" name= "password" id="passoword" class="form-control form-control-lg" />
+                    <input type="password" name= "password" id="password" class="form-control form-control-lg" />
                     <label class="form-label" for="passwordinput">Password</label>
                   </div>
 
                   <div class="pt-1 mb-4">
-                    <button class="btn btn-dark btn-lg btn-block" type="button">Login</button>
+                    <input type="submit" value="Log in" class="btn btn-success" />
                   </div>
 
-                  <a class="small text-muted" href="#!">Forgot password?</a>
                   <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="register.php"
                       style="color: #393f81;">Register here</a></p>
                 </form>

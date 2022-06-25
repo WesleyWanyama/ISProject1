@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 //Database class to perform CRUD operations
 
@@ -48,8 +48,19 @@ class Database
             echo "<h3>Image upload failed</h3>";
         }
     }
-}
+    function getData($sql){
 
+        $multiple_rows = [];
+        if ($this->conn!=false) {
+            $result = mysqli_query($this->conn,$sql);
+            while($row = mysqli_fetch_assoc($result)){
+                $multiple_rows[] = $row;
+            }
+            mysqli_close($this->conn);
+        }
+    return $multiple_rows;
+}
+ }
 //Object that will be used in other files
 $database = new Database();
 $database->connect_db();

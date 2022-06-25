@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 require_once('C:\xamp\htdocs\ISProject1\Model\database.php');
 
