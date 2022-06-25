@@ -1,3 +1,4 @@
+<?php require_once('C:\xamp\htdocs\ISProject1\Controller\insert_rider.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>

@@ -9,8 +9,8 @@ if(isset($_POST) & !empty($_POST)){
 	$password = $database->sanitize($_POST['password']);
 	$profile_picture = ($_FILES['profile_picture']);
 }
-
-$result = $database->create($first_name,$last_name,$national_id_number,$password,$profile_picture);
+ 
+$result = $database->registerRider($first_name,$last_name,$national_id_number,$password,$profile_picture);
 if($result){
 	echo "Successfully inserted data";
 }else{

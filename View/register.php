@@ -22,7 +22,7 @@
 		
 		<div class="registration_form">
 		<span class="badge bg-warning text-dark">Create Account</span><br><br>
-		<form action="/ISProject1/Controller/insert.php"  method="POST" enctype="multipart/form-data">
+		<form action="/ISProject1/Controller/insert_rider.php"  method="POST" enctype="multipart/form-data">
 
 		<label for="firstname">Enter your First name</label><br/>
 		<input type="text" name="first_name" required minlength="3" maxlength="30" /><br/><br/>
@@ -31,7 +31,7 @@
 		<input type="text" name="last_name" required  /><br/><br/>
 
 		<label for="nationalid">Enter your National ID Number</label><br/>
-		<input type="number" name="national_id_number" min="0000000000" max="99999999" required/><br/><br/>
+		<input type="text" name="national_id_number"  pattern="[1-9][0-9]{0,8}" title="ID number should have 8 numbers" required/><br/><br/>
 
 		<label for="userpassword">Enter your Password</label><br/>
 		<input type="password" name="password" required/><br/><br/>
