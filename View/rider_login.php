@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +34,7 @@
                   <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
 
                   <div class="form-outline mb-4">
-                  	<input type="text" name="national_id_number" pattern="[1-9][0-9]{0,8}" class="form-control form-control-lg" />
+                  	<input type="text" name="national_id_number" pattern="[1-9][0-9]{0,8}" class="form-control form-control-lg" /> 
                     <label class="form-label" for="nationalid">National ID Number</label>
                   </div>
 
@@ -42,7 +44,7 @@
                   </div>
 
                   <div class="pt-1 mb-4">
-                    <input type="submit" value="Log in" class="btn btn-success" />
+                    <input type="submit" value="Log in" name="login" class="btn btn-success" />
                   </div>
 
                   <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="register.php"

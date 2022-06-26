@@ -1,20 +1,24 @@
 <?php
+//File to set user session and redirect rider to dashboard after login process is validated
+session_start();
+if(isset($_POST['login']))
+{
+	extract($_POST);
+	include 'database_login.php';
+	$sql = "SELECT * FROM rider where national_id_number = '$national_id_number' and password = '$password'";
+	$result = mysqli_query($conn,$sql);
 
-require_once('C:\xamp\htdocs\ISProject1\Model\database.php');
-
-$national_id_number = $_POST['national_id_number'];
-$password = $_POST['password'];
-
-$sql = "SELECT * FROM rider where national_id_number='$national_id_number' and password='$password'";
-
-$user_details = $database->getData($sql);
-if(sizeof($user_details)>0){
-	session_start();
-	$_SESSION['user_details'] = $user_details[0];
-	header('Location:C:\xamp\htdocs\ISProject1\View\rider_dashboard.php');
-}else{
-	header('Location:C:\xamp\htdocs\ISProject1\View\rider_login.php');
+	if(mysqli_num_rows($result)>0){
+		while($row = mysqli_fetch_assoc($result)){
+			$_SESSION["Rider_ID"] = $row['rider_id'];
+			$_SESSION["first_name"] = $row['first_name'];
+			$_SESSION["last_name"] = $row['last_name'];
+			$_SESSION["national_id_number"] = $row['national_id_number'];
+			$_SESSION["password"] = $row['password'];
+			/*header("Location: C:/xamp/htdocs/ISProject1/View/rider_dashboard.php");*/
+		}
+	}else{
+		echo "Invalid ID or Password!!";
+	}
 }
-
-echo "WELCOME WES!!";
 ?>
