@@ -1,4 +1,4 @@
-<?php require_once('C:\xamp\htdocs\ISProject1\Controller\rider_session.php'); ?>
+<?php require_once('rider_session.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>

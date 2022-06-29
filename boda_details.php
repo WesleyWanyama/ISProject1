@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<form class="row g-3" method="POST" enctype="multipart/form-data">
+	<form class="row g-3" method="POST" action="insert_boda_details.php" enctype="multipart/form-data">
   <div class="col-7">
     <label for="numberplate" class="form-label">Motorcycle Number Plate</label>
     <input type="text" name="number_plate" class="form-control" id="inputEmail4">

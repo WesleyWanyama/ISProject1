@@ -1,4 +1,4 @@
-<?php require_once('C:\xamp\htdocs\ISProject1\Model\database.php'); ?>
+<?php require_once('database.php'); ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -22,7 +22,7 @@
 		
 		<div class="registration_form">
 		<span class="badge bg-warning text-dark">Create Account</span><br><br>
-		<form action="/ISProject1/Controller/insert_rider.php"  method="POST" enctype="multipart/form-data">
+		<form action="insert_rider.php"  method="POST" enctype="multipart/form-data">
 
 		<label for="firstname">Enter your First name</label><br/>
 		<input type="text" name="first_name" required minlength="3" maxlength="30" /><br/><br/>

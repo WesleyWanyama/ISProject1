@@ -48,18 +48,16 @@ class Database
             echo "<h3>Image upload failed</h3>";
         }
     }
-    function getData($sql){
-
-        $multiple_rows = [];
-        if ($this->conn!=false) {
-            $result = mysqli_query($this->conn,$sql);
-            while($row = mysqli_fetch_assoc($result)){
-                $multiple_rows[] = $row;
-            }
-            mysqli_close($this->conn);
+    public function registerBoda($number_plate,$KRA_pin,$certificate_of_good_conduct,$make,$model,$weight,$county){
+        //Storing the Certificate of good conduct
+        $sql = "INSERT INTO registration_details(number_plate,KRA_pin,certificate_of_good_conduct,make,model,weight,county) VALUES ('$number_plate','$KRA_pin','$certificate_of_good_conduct','$make','$model','$weight','$county')";
+        $result = mysqli_query($this->conn,$sql);
+        if ($result){
+            return true;
+        }else{
+            return false;
         }
-    return $multiple_rows;
-}
+    }
  }
 //Object that will be used in other files
 $database = new Database();

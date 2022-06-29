@@ -1,6 +1,6 @@
 <?php 
 
-require_once('C:\xamp\htdocs\ISProject1\Model\database.php');
+require_once('database.php');
 
 if(isset($_POST) & !empty($_POST)){
 	$first_name = $database->sanitize($_POST['first_name']);
