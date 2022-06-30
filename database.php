@@ -2,7 +2,7 @@
 
 //Database class to perform CRUD operations
 
-class Database
+class Database 
 {
 	private $conn;
 
@@ -50,7 +50,7 @@ class Database
     }
     public function registerBoda($number_plate,$KRA_pin,$certificate_of_good_conduct,$make,$model,$weight,$county){
         //Storing the Certificate of good conduct
-        $sql = "INSERT INTO registration_details(number_plate,KRA_pin,certificate_of_good_conduct,make,model,weight,county) VALUES ('$number_plate','$KRA_pin','$certificate_of_good_conduct','$make','$model','$weight','$county')";
+        $sql = "INSERT INTO 'registration_details' (number_plate,KRA_pin,certificate_of_good_conduct,make,model,weight,county) VALUES ('$number_plate','$KRA_pin','$certificate_of_good_conduct','$make','$model','$weight','$county')";
         $result = mysqli_query($this->conn,$sql);
         if ($result){
             return true;

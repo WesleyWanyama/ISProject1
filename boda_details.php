@@ -36,14 +36,14 @@
           <option  value="Wajir">08.Wajir</option>
           <option  value="Mandera">09.Mandera</option>
           <option  value="Marsabit">10.Marsabit</option>
-          <option  value="Isiolo">11.Isiolo</option>
+          <option  value="Isiolo">11.Isiolo</option> 
           <option  value="Meru">12.Meru</option>
           <option  value="Tharaka">13.Tharaka</option>
           <option  value="Embu">14.Embu</option>
           <option  value="Kitui">15.Kitui</option>
           <option  value="Machakos">16.Machakos</option>
           <option  value="Makueni">17.Makueni</option>
-          <option  value="Nyandarua">18.Nyandarua</option>
+          <option  value="Nyandarua">18.Nyandarua</option> 
           <option  value="Nyeri">19.Nyeri</option>
           <option  value="Kirinyaga">20.Kirinyaga</option>
           <option  value="Muranga">21.Muran'ga</option>
