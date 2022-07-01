@@ -10,14 +10,7 @@ if(isset($_POST) & !empty($_POST)){
 	$weight = $database->sanitize($_POST['weight']);
 	$county = $database->sanitize($_POST['county']);;
 	//Handling of the file upload
-    $fileName = $_FILES['certificate_of_good_conduct']['name'];
-    $tmpName = $_FILES['certificate_of_good_conduct']['tmp_name'];
-    $fileSize = $_FILES['certificate_of_good_conduct']['size'];
-    $fileType = $_FILES['certificate_of_good_conduct']['type'];
-    //opening the file
-    $fp = fopen($tmpName, 'r');
-    $certificate_of_good_conduct = fread($fp, filesize($tmpName));
-    fclose($fp);
+    $certificate_of_good_conduct = addslashes(file_get_contents($_FILES['certificate_of_good_conduct']['tmp_name']));
 
 }
 $result = $database->registerBoda($number_plate,$KRA_pin,$certificate_of_good_conduct,$make,$model,$weight,$county);
