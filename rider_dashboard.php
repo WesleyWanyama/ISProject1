@@ -21,26 +21,38 @@ if(!isset($_SESSION['user_details']))
 <body>
 
 	<!-- Top Bar Showing rider info -->
-	<section id="topbar" class="d-flex align-items-center" style="height: 40px;">
+	<section id="topbar" class="d-flex align-items-center" style="height: 50px;">
     <?php echo $fullname;?>
   </section>
 
     <!-- NAV BAR -->
-    <nav>
-    	<a href="#"><i class="fa-solid fa-grid-horizontal"></i>Dashboard</a>
-    	<a href="#"><i class="fa-solid fa-user-pen"></i>Make Application</a>
-    	<a href="#"><i class="fa-solid fa-rectangle-history"></i>View Applications</a>
-    </nav>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-grid-horizontal"></i>Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-user-pen"></i>Make Application</a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-rectangle-history"></i>View Applications</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
     <!-- Table showing registration details and giving an option to make an application -->
     <div class="card">
     	<div class="card-header">
     		<div class="row">
     			<div class="col">
-    				Registration Details
+    				<h3>Registration Details</h3>
     			</div>
     			<div class="col text-right">
-    				<a href="" class="btn btn-success">Make Application</a>
+    				<a href="" style="margin-left: 480px;"class="btn btn-success">Make Application</a>
     			</div>
     		</div>
     	</div>
@@ -68,4 +80,5 @@ if(!isset($_SESSION['user_details']))
     </div>
 
 </body>
+
 </html>
