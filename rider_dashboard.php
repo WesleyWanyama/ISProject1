@@ -1,10 +1,13 @@
 <?php
 session_start();
 //If the session is not started, redirect to the login page
-/*if(!isset($_SESSION['username']))
+if(!isset($_SESSION['user_details']))
 {
   header('Location:rider_login.php');
-}*/
+}
+  $firstname = $_SESSION['user_details']['first_name'];
+  $lastname = $_SESSION['user_details']['last_name'];
+  $fullname = $firstname." ".$lastname;
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,12 +22,7 @@ session_start();
 
 	<!-- Top Bar Showing rider info -->
 	<section id="topbar" class="d-flex align-items-center" style="height: 40px;">
-    <div class="container d-flex justify-content-center justify-content-md-between">
-      <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">contact@example.com</a></i>
-        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
-      </div>
-  </div>
+    <?php echo $fullname;?>
   </section>
 
     <!-- NAV BAR -->
@@ -33,13 +31,6 @@ session_start();
     	<a href="#"><i class="fa-solid fa-user-pen"></i>Make Application</a>
     	<a href="#"><i class="fa-solid fa-rectangle-history"></i>View Applications</a>
     </nav>
-
-    <!-- Section showing rider info and giving log out option -->
-    <section>
-    	<div>
-    		<?php echo $_SESSION['username'];?>
-    	</div>
-    </section>
 
     <!-- Table showing registration details and giving an option to make an application -->
     <div class="card">
