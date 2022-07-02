@@ -1,4 +1,11 @@
-<?php require_once('rider_session.php'); ?>
+<?php
+session_start();
+//If the session is not started, redirect to the login page
+/*if(!isset($_SESSION['username']))
+{
+  header('Location:rider_login.php');
+}*/
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +37,7 @@
     <!-- Section showing rider info and giving log out option -->
     <section>
     	<div>
-    		
+    		<?php echo $_SESSION['username'];?>
     	</div>
     </section>
 

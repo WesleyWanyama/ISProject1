@@ -1,4 +1,5 @@
 <?php
+require_once('database_login.php');
 
 //Connect to the database
 $servername = '127.0.0.1';
@@ -16,4 +17,4 @@ function hashPassword($password){
 		return $encpassword;
 	}
 
-?>
+?> 

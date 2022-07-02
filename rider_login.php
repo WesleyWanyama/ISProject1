@@ -1,4 +1,4 @@
-<?php
+<?php 
 session_start();
 ?>
 <!DOCTYPE html>
@@ -10,7 +10,6 @@ session_start();
 	<title>Rider Login</title>
 </head>
 <body>
-
 	<section class="vh-100" style="background-color: #0C7018;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -21,6 +20,7 @@ session_start();
               <img src="bodalogin.jpg"
                 alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem; height:100%" />
             </div>
+
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
 
@@ -28,13 +28,22 @@ session_start();
 
                   <div class="d-flex align-items-center mb-3 pb-1">
                     <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
-                    <span class="h1 fw-bold mb-0">Logo</span>
+                    <span class="h1 fw-bold mb-0">Welcome</span>
                   </div>
+                  <?php
+                  
+                  if(isset($_SESSION['status']) && $_SESSION['status'] !='')
+                  {
+                    echo '<h2 class = "bg-danger text-white">'.$_SESSION['status'].'</h2>';
+                    unset($_SESSION['status']);
+                  }
+
+                  ?>
 
                   <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
 
                   <div class="form-outline mb-4">
-                  	<input type="text" name="national_id_number" pattern="[1-9][0-9]{0,8}" class="form-control form-control-lg" /> 
+                  	<input type="number" name="national_id_number" pattern="[1-9][0-9]{0,8}" class="form-control form-control-lg" /> 
                     <label class="form-label" for="nationalid">National ID Number</label>
                   </div>
 
@@ -58,7 +67,7 @@ session_start();
       </div>
     </div>
   </div>
-</section>
+</section> 
 
 </body>
 </html>
