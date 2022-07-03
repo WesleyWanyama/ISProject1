@@ -21,8 +21,9 @@ if(!isset($_SESSION['user_details']))
 <body>
 
 	<!-- Top Bar Showing rider info -->
-	<section id="topbar" class="d-flex align-items-center" style="height: 50px;">
-    <?php echo $fullname;?>
+	<section id="topbar" class="d-flex align-items-center" style="height: 60px; background-color: #0C7018;">
+    <?php echo '<h4 style="margin-left: 20px; color: white;">'. $fullname.'</h4>';?>
+    <?php echo '<img style="margin-left: 1000px; border-radius:50%;" src="images/'.$_SESSION['user_details']['profile_picture'].'" width="55px;" height="55px;" alt="profile picture">'?>
   </section>
 
     <!-- NAV BAR -->
@@ -31,16 +32,17 @@ if(!isset($_SESSION['user_details']))
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-grid-horizontal"></i>Dashboard</a>
+          <a class="nav-link active" aria-current="page" href="rider_dashboard.php"><i class="fa-solid fa-grid-horizontal"></i>Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-user-pen"></i>Make Application</a>
+          <a class="nav-link active" aria-current="page" href="boda_details.php"><i class="fa-solid fa-user-pen"></i>Make Application</a>
         </li>
         <li class="nav-item" >
-          <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-rectangle-history"></i>View Applications</a>
+          <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-rectangle-history"></i>View Application History</a>
         </li>
       </ul>
     </div>
+    <a href="rider_logout.php"><button type="button" class="btn btn-secondary">Logout</button></a>
   </div>
 </nav>
 
@@ -52,7 +54,7 @@ if(!isset($_SESSION['user_details']))
     				<h3>Registration Details</h3>
     			</div>
     			<div class="col text-right">
-    				<a href="" style="margin-left: 480px;"class="btn btn-success">Make Application</a>
+    				<a href="boda_details.php" style="margin-left: 480px;"class="btn btn-success">Make Application</a>
     			</div>
     		</div>
     	</div>
