@@ -9,7 +9,7 @@
 	    <title>Sign Up</title>
 	</head>
 	<body>
-		<!--NAV BAR-->
+		<!--NAV BAR--> 
 		<div class="topnav" id="myTopnav">
 	  <a href="#home" class="active">Home</a>
       <a href="#news">About Us</a>
@@ -31,13 +31,13 @@
 		<input type="text" name="last_name" required  /><br/><br/>
 
 		<label for="nationalid">Enter your National ID Number</label><br/>
-		<input type="text" name="national_id_number"  pattern="[1-9][0-9]{0,8}" title="ID number should have 8 numbers" required/><br/><br/>
+		<input type="number" name="national_id_number" pattern="[1-9][0-9]{0,8}"  required /> <br/><br/>
 
 		<label for="userpassword">Enter your Password</label><br/>
 		<input type="password" name="password" required/><br/><br/>
 
 		<label for="profilepicture">Upload Profile Picture</label><br/>
-		
+
         <input type="file" name="profile_picture" required><br><br>
         
         <input type="submit" value="Sign Up" class="btn btn-success" />
