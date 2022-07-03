@@ -37,19 +37,7 @@
 		<input type="password" name="password" required/><br/><br/>
 
 		<label for="profilepicture">Upload Profile Picture</label><br/>
-
-        <!-- PROFILE PICTURE UPLOAD 
-        <div class="form-group text-center">
-            <span class="img-div">
-              <div class="text-center img-placeholder"  onClick="triggerClick()">
-                <h4>Upload Photo</h4>
-              </div>
-              <img src="images/test_avator.jpg" onClick="triggerClick()" id="profileDisplay">
-            </span>
-            <input type="file" name="profile_picture" onChange="displayImage(this)" id="profileImage" class="form-control" style="display: none;">
-          </div>
-        -->
-
+		
         <input type="file" name="profile_picture" required><br><br>
         
         <input type="submit" value="Sign Up" class="btn btn-success" />
