@@ -11,7 +11,7 @@ if(!isset($_SESSION['user_details']))
 ?>
 <!DOCTYPE html>
 <html>
-<head>
+<head> 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -36,9 +36,6 @@ if(!isset($_SESSION['user_details']))
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="boda_details.php"><i class="fa-solid fa-user-pen"></i>Make Application</a>
-        </li>
-        <li class="nav-item" >
-          <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-rectangle-history"></i>View Application History</a>
         </li>
       </ul>
     </div>
