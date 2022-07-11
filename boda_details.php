@@ -1,17 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html>  
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<title>Motorcycle Details</title>
+	<title>Boda Details</title>
 </head>
 <body>
 
-	<form class="row g-3" method="POST" action="insert_boda_details.php" enctype="multipart/form-data">
+	<form style="margin-top: 10px;"class="row g-3" method="POST" action="insert_boda_details.php" enctype="multipart/form-data">
+    <!-- CODE TO SELECT THE RIDER ID FROM THE TABLE RIDER IN THE DATABASE -->
+    <?php
+    $servername = '127.0.0.1';
+    $serveruser = 'root';
+    $serverpassword = '';
+    $database = 'is_project1';
+    //connection
+    $conn = new mysqli($servername,$serveruser,$serverpassword,$database);
+    if($conn->connect_error){
+      die("Connection failed: " . $conn->connect_error);
+    }
+    $sql = "SELECT * FROM rider";
+    $result = $conn->query($sql);
+    if($result->num_rows>0){
+      ?>
+      <div class="col-7">
+      <select class="form-select" aria-label="Default select example" name="rider_ID" required>
+        <option selected>Rider ID</option>
+        <?php
+      while($row = $result->fetch_assoc()){
+        ?>
+        <option value="<?php echo $row["rider_ID"];?>"><?php echo $row["first_name"]." ".$row["last_name"]; ?></option>
+        <?php
+      }
+      ?>
+      </select>
+    </div>
+      <?php
+    }else{
+      echo "No Data Available";
+    }
+    ?>
   <div class="col-7">
     <label for="numberplate" class="form-label">Motorcycle Number Plate</label>
     <input type="text" name="number_plate" class="form-control" id="inputEmail4">
+  </div>
+  <div class="col-7">
+    <label for="nationalid" class="form-label">Enter National ID Number</label>
+    <input type="number" name="national_id_number" pattern="[1-9][0-9]{0,8}" class="form-control" id="inputAddress" >
   </div>
   <div class="col-7">
     <label for="krapin" class="form-label">Enter KRA PIN</label>
@@ -23,7 +59,6 @@
     <input type="file" name="certificate_of_good_conduct" id="goodconduct">
   </div>
   <div class="col-7">
-    <!-- <label for="krapin" class="form-label">Enter County of Residence</label> -->
     <select class="form-select"  aria-label="Default select example" name="county">
     	<option selected>Select County of Residence</option>
     	  <option  value="Mombasa">01.Mombasa</option>

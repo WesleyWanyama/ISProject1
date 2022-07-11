@@ -23,7 +23,7 @@ if(!isset($_SESSION['user_details']))
 	<!-- Top Bar Showing rider info -->
 	<section id="topbar" class="d-flex align-items-center" style="height: 60px; background-color: #0C7018;">
     <?php echo '<h4 style="margin-left: 20px; color: white;">'. $fullname.'</h4>';?>
-    <?php echo '<img style="margin-left: 1000px; border-radius:50%;" src="images/'.$_SESSION['user_details']['profile_picture'].'" width="55px;" height="55px;" alt="profile picture">'?>
+    <?php echo '<img style="margin-left: 1000px; border:2px solid white; border-radius:50%;" src="images/'.$_SESSION['user_details']['profile_picture'].'" width="55px;" height="55px;" alt="profile picture">'?>
   </section> 
 
     <!-- NAV BAR -->
@@ -54,7 +54,7 @@ if(!isset($_SESSION['user_details']))
     				<h3>Registration Details</h3>
     			</div>
     			<div class="col text-right">
-    				<a href="boda_details.php" style="margin-left: 480px;"class="btn btn-success">Make Application</a>
+    				<a href="boda_details.php" style="margin-left: 504px;"class="btn btn-success">Make Application</a>
     			</div>
     		</div>
     	</div>

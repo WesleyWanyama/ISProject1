@@ -2,7 +2,7 @@
 
 //Database class to perform CRUD operations
 
-class Database 
+class Database  
 {
 	private $conn;
 
@@ -25,14 +25,6 @@ class Database
     }
     //Method that will be called to insert data into the database
     public function registerRider($first_name,$last_name,$national_id_number,$password,$profile_picture){
-        //path to store the uploaded image
-        /*$image = $_FILES['profile_picture']['name'];
-
-        $target = "C:\xamp\htdocs\ISProject1\View" . $image;
-        /*
-        $target = "./View/". basename($_FILES['profile_picture']['name']);*/
-        /*$tempname = $_FILES["profile_picture"]["tmp_name"];*/
- 
     	$sql = "INSERT INTO rider (first_name,last_name,national_id_number,password,profile_picture) VALUES ('$first_name','$last_name','$national_id_number','$password','$profile_picture')";
     	$result = mysqli_query($this->conn,$sql);
     	if($result){
@@ -42,9 +34,9 @@ class Database
     		return false;
     	}
     }
-    public function registerBoda($number_plate,$KRA_pin,$certificate_of_good_conduct,$make,$model,$weight,$county){
-        //Storing the Certificate of good conduct
-        $sql = "INSERT INTO registration_details (number_plate,KRA_pin,certificate_of_good_conduct,make,model,weight,county) VALUES ('$number_plate','$KRA_pin','$certificate_of_good_conduct','$make','$model','$weight','$county')";
+    //Method that will be called to insert the boda details in the database
+    public function registerBoda($rider_ID,$number_plate,$national_ID_number,$KRA_pin,$certificate_of_good_conduct,$make,$model,$weight,$county){
+        $sql = "INSERT INTO registration_details (rider_ID,number_plate,national_ID_number,KRA_pin,certificate_of_good_conduct,make,model,weight,county) VALUES ('$rider_ID','$number_plate','$national_ID_number','$KRA_pin','$certificate_of_good_conduct','$make','$model','$weight','$county')";
         $result = mysqli_query($this->conn,$sql);
         if ($result){
             return true;
