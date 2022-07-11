@@ -47,7 +47,7 @@
   </div>
   <div class="col-7">
     <label for="nationalid" class="form-label">Enter National ID Number</label>
-    <input type="number" name="national_id_number" pattern="[1-9][0-9]{0,8}" class="form-control" id="inputAddress" >
+    <input type="number" name="national_ID_number" pattern="[1-9][0-9]{0,8}" class="form-control" id="inputAddress" >
   </div>
   <div class="col-7">
     <label for="krapin" class="form-label">Enter KRA PIN</label>

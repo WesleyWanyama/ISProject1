@@ -26,7 +26,7 @@ class Database
     //Method that will be called to insert data into the database
     public function registerRider($first_name,$last_name,$national_id_number,$password,$profile_picture){
     	$sql = "INSERT INTO rider (first_name,last_name,national_id_number,password,profile_picture) VALUES ('$first_name','$last_name','$national_id_number','$password','$profile_picture')";
-    	$result = mysqli_query($this->conn,$sql);
+    	$result = mysqli_query($this->conn,$sql); 
     	if($result){
     		return true;
     	}else{

@@ -5,9 +5,11 @@ if(!isset($_SESSION['user_details']))
 {
   header('Location:rider_login.php');
 }
+  $ID = $_SESSION['user_details']['rider_ID'];
   $firstname = $_SESSION['user_details']['first_name'];
   $lastname = $_SESSION['user_details']['last_name'];
   $fullname = $firstname." ".$lastname;
+  $ID = $_SESSION['user_details']['rider_ID'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -68,8 +70,31 @@ if(!isset($_SESSION['user_details']))
               <th>Registration Status</th>
             </tr>
 
-            <!-- INSERT PHP CODE FOR DATA -->
+            <!-- PHP CODE TO FETCH FROM THE DATABASE AND DISPLAY IN THE TABLE -->
+            <?php
+            require_once('procedural_db_connection.php');
+            $sql = "SELECT * FROM registration_details where rider_ID = '$ID'";
+            $result = mysqli_query($conn,$sql);
+            if(mysqli_num_rows($result) > 0){
+              ?>
+              <?php
+              while($row = mysqli_fetch_assoc($result)){
+                ?>
+                <tr>
+                  <td><?php echo $row["registration_ID"]; ?></td>
+                  <td><?php echo $row["rider_ID"]; ?></td>
+                  <td><?php echo $row["number_plate"]; ?></td>
+                  <td><?php echo $row["registration_date"]; ?></td>
+                  <td><?php echo $row["KRA_pin"]; ?></td>
+                  <td><?php echo $row["make"]; ?></td>
+                  <td><?php echo $row["model"]; ?></td>
+                  <td><?php echo $row["weight"]; ?></td>
+                  <td><?php echo $row["county"]; ?></td>
+                  <td><?php echo $row["registration_status"]; ?></td>
+                </tr>
 
+               <?php } ?>
+             <?php } ?>
           </table>
         </div>
       </div>

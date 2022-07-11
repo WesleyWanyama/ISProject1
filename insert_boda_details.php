@@ -3,7 +3,7 @@
 require_once('database.php');
  
 if(isset($_POST) & !empty($_POST)){
-	$rider_ID = $database -> sanitize($_POST['rider_ID'])
+	$rider_ID = $database -> sanitize($_POST['rider_ID']);
 	$number_plate = $database->sanitize($_POST['number_plate']);
 	$national_ID_number = $database->sanitize($_POST['national_ID_number']);
 	$KRA_pin = $database->sanitize($_POST['KRA_pin']);

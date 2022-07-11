@@ -7,6 +7,7 @@ require_once('database_login.php');
 	$pass = $_POST['password'];
 
 	$sql = "SELECT * FROM rider where national_ID_number='$nationalid' AND password='$pass'";
+	/*$sql .= "SELECT * FROM registration_details where national_ID_number='$nationalid'"; */
 	$user_details = getData($sql);
 	if(sizeof($user_details)>0){
 		session_start();
