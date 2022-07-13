@@ -1,33 +1,30 @@
 <?php
 session_start();
 //If the session is not started, redirect to the login page
-if(!isset($_SESSION['user_details']))
+if(!isset($_SESSION['admin_details']))
 {
-  header('Location:rider_login.php'); 
+  header('Location:admin_login.php');
 }
-  $firstname = $_SESSION['user_details']['first_name'];
-  $lastname = $_SESSION['user_details']['last_name'];
-  $fullname = $firstname." ".$lastname;
+  $username = $_SESSION['admin_details']['username'];
+require_once('database.php');
+$result = $database->viewRegisteredRiders();
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8"> 
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<script src="https://kit.fontawesome.com/7571e7ef19.js" crossorigin="anonymous"></script>
-	<title>Rider Dashboard</title>
+	<title>Registered Riders</title>
 </head>
 <body>
-
-	<!-- Top Bar Showing rider info -->
+	<!-- Top Bar showing admin info -->
 	<section id="topbar" class="d-flex align-items-center" style="height: 60px; background-color: #0C7018;">
-    <?php echo '<h4 style="margin-left: 20px; color: white;">'. $fullname.'</h4>';?>
-    <?php echo '<img style="margin-left: 1000px; border:2px solid white; border-radius:50%;" src="images/'.$_SESSION['user_details']['profile_picture'].'" width="55px;" height="55px;" alt="profile picture">'?>
+    <?php echo '<h4 style="margin-left: 20px; color: white;">'. "Welcome"." ".$username.'</h4>';?>
   </section> 
-
-    <!-- NAV BAR --> 
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
@@ -35,7 +32,7 @@ if(!isset($_SESSION['user_details']))
           <a class="nav-link active" aria-current="page" href="rider_dashboard.php"><i class="fa-solid fa-grid-horizontal"></i>Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="boda_details.php"><i class="fa-solid fa-user-pen"></i>Make Application</a>
+          <a class="nav-link active" aria-current="page" href="registered_riders.php"><i class="fa-solid fa-user-pen"></i>View Registered Riders</a>
         </li>
         <li class="nav-item" >
           <a class="nav-link active" aria-current="page" href="boda_registration_history.php"><i class="fa-solid fa-rectangle-history"></i>View Application History</a>
@@ -46,15 +43,12 @@ if(!isset($_SESSION['user_details']))
   </div>
 </nav>
 
-    <!-- Table showing registration details and giving an option to make an application -->
-    <div class="card">
+<!-- Table to display registered riders -->
+<div class="card">
     	<div class="card-header">
     		<div class="row">
     			<div class="col">
-    				<h3>Registration Details</h3>
-    			</div>
-    			<div class="col text-right">
-    				<a href="boda_details.php" style="margin-left: 504px;"class="btn btn-success">Make Application</a>
+    				<h3>Registered Riders</h3>
     			</div>
     		</div>
     	</div>
@@ -62,25 +56,27 @@ if(!isset($_SESSION['user_details']))
     		<div class="table-responsive">
     			<table class="table table-striped table-bordered">
     				<tr>
-    					<th>Registration ID</th>
     					<th>Rider ID</th>
-    					<th>Number Plate</th>
-    					<th>Registration Date</th>
-    					<th>KRA PIN</th>
-    					<th>Make</th>
-    					<th>Model</th>
-    					<th>Weight</th>
-    					<th>County</th>
-    					<th>Registration Status</th>
+    					<th>First Name</th>
+    					<th>Last Name</th>
+    					<th>National ID Number</th>
+    					<th>Profile Picture</th>
     				</tr>
-
-    				<!-- INSERT PHP CODE FOR DATA -->
-
+    				<?php
+    				while($row = mysqli_fetch_assoc($result)){
+    				?>
+    				<tr>
+    					<td><?php echo $row["rider_ID"]; ?></td>
+    					<td><?php echo $row["first_name"]; ?></td>
+    					<td><?php echo $row["last_name"]; ?></td>
+    					<td><?php echo $row["national_ID_number"]; ?></td>
+    					<td><?php echo '<img style="border:2px solid black; " src="images/'.$row["profile_picture"].'" width="70px;" height="70px;" alt="profile picture">'?></td>
+    					
+    				</tr>
+    				<?php } ?>
     			</table>
     		</div>
     	</div>
     </div>
-
 </body>
-
 </html>

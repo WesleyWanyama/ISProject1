@@ -17,7 +17,7 @@ class Database
     function __construct(){
     	$this->connect_db();
     }
-    
+     
     //Method to sanitized the user submitted data 
     public function sanitize($var){
     	$return = mysqli_real_escape_string($this->conn, $var);
@@ -43,6 +43,18 @@ class Database
         }else{
             return false;
         }
+    }
+    //Method that will be called to display registered riders
+    public function viewRegisteredRiders(){
+        $sql = "SELECT * FROM rider";
+        $result = mysqli_query($this->conn,$sql);
+        return $result;
+    }
+    //Method that will be called to display submitted boda details
+    public function viewBodaDetails(){
+        $sql = "SELECT * FROM registration_details";
+        $result = mysqli_query($this->conn,$sql);
+        return $result;
     }
  }
 //Object that will be used in other files
