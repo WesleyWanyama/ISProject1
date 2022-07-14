@@ -37,7 +37,7 @@ $result = $database->viewBodaDetails();
         <li class="nav-item" >
           <a class="nav-link active" aria-current="page" href="view_boda_details.php"><i class="fa-solid fa-rectangle-history"></i>Submitted Boda Details</a>
         </li>
-      </ul>
+      </ul> 
     </div>
     <a href="rider_logout.php"><button type="button" class="btn btn-secondary">Logout</button></a>
   </div>
@@ -79,7 +79,7 @@ $result = $database->viewBodaDetails();
     					<td><?php echo $row["number_plate"]; ?></td>
     					<td><?php echo $row["registration_date"]; ?></td>
               <td><?php echo $row["KRA_pin"]; ?></td>
-              <td><?php echo $row["number_plate"]; ?></td>
+              <td><a href="download.php?registration_id=<?php echo $row["registration_ID"]; ?>"><button type="button" class="btn btn-info">Download</button></a></td>
               <td><?php echo $row["county"]; ?></td>
               <td><?php echo $row["make"]; ?></td>
               <td><?php echo $row["model"]; ?></td>

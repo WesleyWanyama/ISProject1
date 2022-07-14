@@ -35,8 +35,8 @@ class Database
     	}
     }
     //Method that will be called to insert the boda details in the database
-    public function registerBoda($rider_ID,$number_plate,$national_ID_number,$KRA_pin,$certificate_of_good_conduct,$make,$model,$weight,$county){
-        $sql = "INSERT INTO registration_details (rider_ID,number_plate,national_ID_number,KRA_pin,certificate_of_good_conduct,make,model,weight,county) VALUES ('$rider_ID','$number_plate','$national_ID_number','$KRA_pin','$certificate_of_good_conduct','$make','$model','$weight','$county')";
+    public function registerBoda($rider_ID,$number_plate,$national_ID_number,$KRA_pin,$certificate_of_good_conduct,$fileName,$fileSize,$fileType,$make,$model,$weight,$county){
+        $sql = "INSERT INTO registration_details (rider_ID,number_plate,national_ID_number,KRA_pin,certificate_of_good_conduct,fileName,fileSize,fileType,make,model,weight,county) VALUES ('$rider_ID','$number_plate','$national_ID_number','$KRA_pin','$certificate_of_good_conduct','$fileName','$fileSize','$fileType','$make','$model','$weight','$county')";
         $result = mysqli_query($this->conn,$sql);
         if ($result){
             return true;
@@ -61,5 +61,5 @@ class Database
 $database = new Database();
 $database->connect_db();
 
-
+ 
 ?>

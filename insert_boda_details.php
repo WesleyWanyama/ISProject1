@@ -12,10 +12,14 @@ if(isset($_POST) & !empty($_POST)){
 	$weight = $database->sanitize($_POST['weight']);
 	$county = $database->sanitize($_POST['county']);;
 	//Handling of the file upload
+	$fileName = $_FILES['userfile']['name'];
+	$tmpName = $_FILES['userfile']['tmp_name'];
+	$fileSize = $_FILES['userfile']['size'];
+	$fileType = $_FILES['userfile']['type'];
     $certificate_of_good_conduct = addslashes(file_get_contents($_FILES['certificate_of_good_conduct']['tmp_name']));
 
 }
-$result = $database->registerBoda($rider_ID,$number_plate,$national_ID_number,$KRA_pin,$certificate_of_good_conduct,$make,$model,$weight,$county);
+$result = $database->registerBoda($rider_ID,$number_plate,$national_ID_number,$KRA_pin,$certificate_of_good_conduct,$fileName,$fileSize,$fileType,$make,$model,$weight,$county);
 if($result){
 	echo "Successfully inserted data";
 }else{
