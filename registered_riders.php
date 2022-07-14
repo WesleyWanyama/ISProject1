@@ -29,7 +29,7 @@ $result = $database->viewRegisteredRiders();
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="rider_dashboard.php"><i class="fa-solid fa-grid-horizontal"></i>Dashboard</a>
+          <a class="nav-link active" aria-current="page" href="admin_dashboard.php"><i class="fa-solid fa-grid-horizontal"></i>Dashboard</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="registered_riders.php"><i class="fa-solid fa-user-pen"></i>View Registered Riders</a>
