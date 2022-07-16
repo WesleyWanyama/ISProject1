@@ -86,7 +86,7 @@ $result = $database->viewBodaDetails();
               <td><?php echo $row["weight"]; ?></td>
               <td><?php echo $row["registration_status"]; ?></td>	
     				</tr>
-    				<?php } ?>
+    				<?php } ?> 
     			</table>
     		</div>
     	</div>

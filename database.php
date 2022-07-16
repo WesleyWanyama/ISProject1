@@ -3,7 +3,7 @@
 //Database class to perform CRUD operations
 
 class Database  
-{
+{ 
 	private $conn;
 
 	//Method used to connect to the database 

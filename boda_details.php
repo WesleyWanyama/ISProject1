@@ -56,7 +56,7 @@
   <div class="col-7">
     <label for="inputAddress2" class="form-label">Upload Certificate of Good Conduct</label><br>
     <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
-    <input type="file" name="certificate_of_good_conduct" id="goodconduct">
+    <input type="file" name="certificate_of_good_conduct" id="certificate_of_good_conduct">
   </div>
   <div class="col-7">
     <select class="form-select"  aria-label="Default select example" name="county">

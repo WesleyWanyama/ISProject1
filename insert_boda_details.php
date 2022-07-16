@@ -11,11 +11,11 @@ if(isset($_POST) & !empty($_POST)){
 	$model = $database->sanitize($_POST['model']);
 	$weight = $database->sanitize($_POST['weight']);
 	$county = $database->sanitize($_POST['county']);;
-	//Handling of the file upload
-	$fileName = $_FILES['userfile']['name'];
-	$tmpName = $_FILES['userfile']['tmp_name'];
-	$fileSize = $_FILES['userfile']['size'];
-	$fileType = $_FILES['userfile']['type'];
+	//Handling of the file upload 
+	$fileName = $_FILES['certificate_of_good_conduct']['name'];
+	$tmpName = $_FILES['certificate_of_good_conduct']['tmp_name'];
+	$fileSize = $_FILES['certificate_of_good_conduct']['size'];
+	$fileType = $_FILES['certificate_of_good_conduct ']['type'];
     $certificate_of_good_conduct = addslashes(file_get_contents($_FILES['certificate_of_good_conduct']['tmp_name']));
 
 }

@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start(); 
 //If the session is not started, redirect to the login page
 if(!isset($_SESSION['user_details']))
 {
@@ -39,7 +39,7 @@ if(!isset($_SESSION['user_details']))
         </li>
         <li class="nav-item" >
           <a class="nav-link active" aria-current="page" href="boda_registration_history.php"><i class="fa-solid fa-rectangle-history"></i>View Application History</a>
-        </li>
+        </li>f
       </ul>
     </div>
     <a href="rider_logout.php"><button type="button" class="btn btn-secondary">Logout</button></a>
