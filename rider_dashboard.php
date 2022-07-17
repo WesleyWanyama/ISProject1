@@ -8,6 +8,7 @@ if(!isset($_SESSION['user_details']))
   $firstname = $_SESSION['user_details']['first_name'];
   $lastname = $_SESSION['user_details']['last_name'];
   $fullname = $firstname." ".$lastname;
+  $ID = $_SESSION['user_details']['rider_ID'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,7 +40,7 @@ if(!isset($_SESSION['user_details']))
         </li>
         <li class="nav-item" >
           <a class="nav-link active" aria-current="page" href="boda_registration_history.php"><i class="fa-solid fa-rectangle-history"></i>View Application History</a>
-        </li>f
+        </li>
       </ul>
     </div>
     <a href="rider_logout.php"><button type="button" class="btn btn-secondary">Logout</button></a>
@@ -51,7 +52,7 @@ if(!isset($_SESSION['user_details']))
     	<div class="card-header">
     		<div class="row">
     			<div class="col">
-    				<h3>Registration Details</h3>
+    				<h3>Recent Applications</h3>
     			</div>
     			<div class="col text-right">
     				<a href="boda_details.php" style="margin-left: 504px;"class="btn btn-success">Make Application</a>
@@ -72,9 +73,35 @@ if(!isset($_SESSION['user_details']))
     					<th>Weight</th>
     					<th>County</th>
     					<th>Registration Status</th>
+              <th>Action</th>
     				</tr>
 
-    				<!-- INSERT PHP CODE FOR DATA -->
+    				<!-- PHP CODE TO FETCH FROM THE DATABASE AND DISPLAY IN THE TABLE -->
+            <?php
+            require_once('procedural_db_connection.php');
+            $sql = "SELECT * FROM registration_details where rider_ID = '$ID'";
+            $result = mysqli_query($conn,$sql);
+            if(mysqli_num_rows($result) > 0){
+              ?>
+              <?php
+              while($row = mysqli_fetch_assoc($result)){
+                ?>
+                <tr>
+                  <td><?php echo $row["registration_ID"]; ?></td>
+                  <td><?php echo $row["rider_ID"]; ?></td>
+                  <td><?php echo $row["number_plate"]; ?></td>
+                  <td><?php echo $row["registration_date"]; ?></td>
+                  <td><?php echo $row["KRA_pin"]; ?></td>
+                  <td><?php echo $row["make"]; ?></td>
+                  <td><?php echo $row["model"]; ?></td>
+                  <td><?php echo $row["weight"]; ?></td>
+                  <td><?php echo $row["county"]; ?></td>
+                  <td><?php echo $row["registration_status"]; ?></td>
+                  <td><a href="update_boda_details.php?registration_ID=<?php echo $row["registration_ID"];?>" class="btn btn-sm btn-warning">Edit</a></td>
+                </tr>
+
+               <?php } ?>
+             <?php } ?>
 
     			</table>
     		</div>

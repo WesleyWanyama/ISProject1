@@ -9,7 +9,7 @@ if(!isset($_SESSION['user_details']))
   $firstname = $_SESSION['user_details']['first_name'];
   $lastname = $_SESSION['user_details']['last_name'];
   $fullname = $firstname." ".$lastname;
-  $ID = $_SESSION['user_details']['rider_ID'];
+  
 ?>
 <!DOCTYPE html>
 <html>
@@ -50,7 +50,7 @@ if(!isset($_SESSION['user_details']))
       <div class="card-header">
         <div class="row">
           <div class="col">
-            <h3>Registration Details</h3>
+            <h3>Application History</h3>
           </div>
         </div>
       </div>
@@ -66,7 +66,7 @@ if(!isset($_SESSION['user_details']))
               <th>Make</th>
               <th>Model</th>
               <th>Weight</th>
-              <th>County</th>
+              <th>County</th> 
               <th>Registration Status</th>
             </tr>
 
