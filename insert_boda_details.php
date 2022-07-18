@@ -18,12 +18,12 @@ if(isset($_POST) & !empty($_POST)){
 	$fileType = $_FILES['certificate_of_good_conduct ']['type'];
     $certificate_of_good_conduct = addslashes(file_get_contents($_FILES['certificate_of_good_conduct']['tmp_name']));
 
-}
+} 
 $result = $database->registerBoda($rider_ID,$number_plate,$national_ID_number,$KRA_pin,$certificate_of_good_conduct,$fileName,$fileSize,$fileType,$make,$model,$weight,$county);
 if($result){
 	echo "Successfully inserted data";
 }else{
 	echo "failed to insert data";
-}
+} 
 
 ?>

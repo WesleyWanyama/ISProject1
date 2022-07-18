@@ -2,7 +2,7 @@
 
 require_once('procedural_db_connection.php');
 $sql = "SELECT * FROM registration_details WHERE registration_ID = " . $_GET["registration_id"];
-$result = mysqli_query($conn,$sql);
+$result = mysqli_query($conn,$sql); 
 
 if(mysqli_num_rows($result) == 0){
 	die("File does not exist");

@@ -9,6 +9,8 @@ if(!isset($_SESSION['user_details']))
   $lastname = $_SESSION['user_details']['last_name'];
   $fullname = $firstname." ".$lastname;
   $ID = $_SESSION['user_details']['rider_ID'];
+  require_once('database.php');
+$result = $database->viewBodaDetails();
 ?>
 <!DOCTYPE html>
 <html>

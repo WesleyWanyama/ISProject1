@@ -51,24 +51,11 @@ class Database
         return $result;
     }
     //Method that will be called to display submitted boda details
-    public function viewBodaDetails($registration_ID){
+    public function viewBodaDetails(){
         $sql = "SELECT * FROM registration_details";
-        if($registration_ID){
-            $sql .= " WHERE registration_ID = $registration_ID";
-        }
         $result = mysqli_query($this->conn,$sql);
         return $result;
     } 
-    //Method to update boda details
-    public function updateBodaDetails($KRA_pin,$county,$make,$model,$weight,$registration_ID){
-        $sql = "UPDATE registration_details SET KRA_pin='$KRA_pin',county='$county',make='$make',model='$model',weight='$weight' WHERE registration_ID='$registration_ID'";
-        $result = mysqli_query($this->conn, $sql);
-        if($result){
-            return true;
-        }else{
-            return false;
-        }
-    }
  }
 //Object that will be used in other files
 $database = new Database();
