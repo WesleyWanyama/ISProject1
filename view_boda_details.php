@@ -37,7 +37,7 @@ $result = $database->viewBodaDetails();
         <li class="nav-item" >
           <a class="nav-link active" aria-current="page" href="view_boda_details.php"><i class="fa-solid fa-rectangle-history"></i>Submitted Boda Details</a>
         </li>
-      </ul> 
+      </ul>  
     </div>
     <a href="rider_logout.php"><button type="button" class="btn btn-secondary">Logout</button></a>
   </div>
@@ -68,6 +68,7 @@ $result = $database->viewBodaDetails();
               <th>Model</th>
               <th>Weight</th>
               <th>Registration Status</th>
+              <th>Action</th>
     				</tr>
     				<?php
     				while($row = mysqli_fetch_assoc($result)){

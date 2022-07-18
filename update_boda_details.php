@@ -2,9 +2,9 @@
 
 require_once('procedural_db_connection.php');
 if(count($_POST)>0){
-  $sql = "UPDATE registration_details SET KRA_pin='" .$_POST['KRA_pin']."' , county='$_POST['county']',make='$_POST['make']',model='$_POST['model']',weight='$_POST['weight']' WHERE registration_ID = '$_GET['registration_ID']'";
-  if(mysql_query($conn,$sql)){
-    echo "Record updated successfully";
+  $sql = "UPDATE registration_details SET KRA_pin='" .$_POST['KRA_pin']."' , county='" .$_POST['county']. "',make='" .$_POST['make']. "',model='" .$_POST['model']. "',weight='" .$_POST['weight']. "' WHERE registration_ID = '" .$_GET['registration_ID']. "'";
+  if(mysqli_query($conn,$sql)){
+    $message = "Record Modified Successfully";
   }else{
     echo "Error updating record";
   }
@@ -23,6 +23,8 @@ if(count($_POST)>0){
 <body>
 
 	<form style="margin-top: 10px;"class="row g-3" method="POST" enctype="multipart/form-data">
+    <div><?php if(isset($message)) { echo $message; } ?>
+</div>
   <div class="col-7">
     <label for="krapin" class="form-label">Enter KRA PIN</label>
     <input type="text" name="KRA_pin" class="form-control" id="inputAddress" >
