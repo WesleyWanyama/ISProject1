@@ -1,6 +1,6 @@
 <?php require_once('database.php'); ?>
 <!DOCTYPE html> 
-<html>
+<html> 
 	<head>
 		<meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,4 +48,3 @@
 	
 	</body>
 </html>
-<script src="javascript/register.js"></script>

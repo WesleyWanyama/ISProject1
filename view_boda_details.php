@@ -1,4 +1,4 @@
-<?php
+<?php 
 session_start();
 //If the session is not started, redirect to the login page
 if(!isset($_SESSION['admin_details']))
@@ -86,6 +86,7 @@ $result = $database->viewBodaDetails();
               <td><?php echo $row["model"]; ?></td>
               <td><?php echo $row["weight"]; ?></td>
               <td><?php echo $row["registration_status"]; ?></td>	
+              <td><a href="detailed_view.php?registration_id=<?php echo $row["registration_ID"]; ?>"><button type="button" class="btn btn-secondary">View</button></a></td>
     				</tr>
     				<?php } ?>  
     			</table>
