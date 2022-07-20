@@ -10,3 +10,11 @@ function displayImage(e) {
     reader.readAsDataURL(e.files[0]);
   }
 }
+function delete_data(product_id)
+{
+    if(confirm("Are you sure you want to remove it?"))
+    {
+        window.location.href="<?php echo base_url(); ?>/Items/delete/"+product_id;
+    }
+    return false;
+}

@@ -10,7 +10,7 @@ require_once('database.php');
 $result = $database->viewBodaDetails();
 ?>
 
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 <head>
 	<meta charset="utf-8">
@@ -68,7 +68,7 @@ $result = $database->viewBodaDetails();
               <th>Model</th>
               <th>Weight</th>
               <th>Registration Status</th>
-              <th>Action</th>
+              <th colspan="2">Action</th>
     				</tr>
     				<?php
     				while($row = mysqli_fetch_assoc($result)){
@@ -87,6 +87,7 @@ $result = $database->viewBodaDetails();
               <td><?php echo $row["weight"]; ?></td>
               <td><?php echo $row["registration_status"]; ?></td>	
               <td><a href="detailed_view.php?registration_id=<?php echo $row["registration_ID"]; ?>"><button type="button" class="btn btn-secondary">View</button></a></td>
+              <td><button type="button" onclick="approve_details('<?php echo $row["registration_ID"];?>')" class="btn btn-success">Approve</button></td>
     				</tr>
     				<?php } ?>  
     			</table>
@@ -94,4 +95,14 @@ $result = $database->viewBodaDetails();
     	</div>
     </div>
 </body>
+<script>
+  function approve_details(registration_id)
+  {
+    if(confirm("Are you sure you want to approve these details?"))
+    {
+      window.location.href="approve_boda_details.php?registration_id="+registration_id;
+    }
+    return false;
+  }
+</script>
 </html>

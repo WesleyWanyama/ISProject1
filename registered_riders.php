@@ -35,7 +35,7 @@ $result = $database->viewRegisteredRiders();
           <a class="nav-link active" aria-current="page" href="registered_riders.php"><i class="fa-solid fa-user-pen"></i>View Registered Riders</a>
         </li>
         <li class="nav-item" >
-          <a class="nav-link active" aria-current="page" href="boda_registration_history.php"><i class="fa-solid fa-rectangle-history"></i>View Application History</a>
+          <a class="nav-link active" aria-current="page" href="view_boda_details.php"><i class="fa-solid fa-rectangle-history"></i>Submitted Details</a>
         </li>
       </ul>
     </div>
