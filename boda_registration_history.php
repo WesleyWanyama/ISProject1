@@ -39,6 +39,9 @@ if(!isset($_SESSION['user_details']))
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="boda_details.php"><i class="fa-solid fa-user-pen"></i>Make Application</a>
         </li>
+        <li class="nav-item" >
+          <a class="nav-link active" aria-current="page" href="boda_registration_history.php"><i class="fa-solid fa-rectangle-history"></i>View Application History</a>
+        </li>
       </ul>
     </div>
     <a href="rider_logout.php"><button type="button" class="btn btn-secondary">Logout</button></a>
@@ -51,6 +54,9 @@ if(!isset($_SESSION['user_details']))
         <div class="row">
           <div class="col">
             <h3>Application History</h3>
+          </div>
+          <div class="col text-right">
+            <a href="boda_details.php" style="margin-left: 504px;"class="btn btn-success">Make Application</a>
           </div>
         </div>
       </div>

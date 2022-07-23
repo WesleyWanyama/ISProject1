@@ -15,7 +15,7 @@ mysqli_autocommit($conn,FALSE);
 
 //Queries
 mysqli_query($conn,"UPDATE registration_details SET registration_status='Approved' WHERE registration_ID=" . $_GET["registration_id"]);
-mysqli_query($conn,"INSERT INTO Boda_bodas (rider_ID,number_plate,registration_date,make,model,weight) SELECT rider_ID, number_plate, registration_date, make, model, weight FROM registration_details WHERE registration_ID=" . $_GET["registration_id"]);
+mysqli_query($conn,"INSERT INTO Boda_bodas (rider_ID,number_plate,registration_date,make,model,weight,county) SELECT rider_ID, number_plate, registration_date, make, model, weight,county FROM registration_details WHERE registration_ID=" . $_GET["registration_id"]);
 
 //Commit transaction
 if(!mysqli_commit($conn)){

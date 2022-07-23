@@ -1,9 +1,16 @@
 <?php
 session_start(); 
-//If the session is not started, redirect to the login page
-if(!isset($_SESSION['user_details']))
+//Check if the session is started and if not redirect to the login page
+if(isset($_SESSION['user_details']))
 {
-  header('Location:rider_login.php'); 
+  //checks if the session has exceeded 10 mins/600 seconds
+  if(time()-$_SESSION["loggedin_time"]>600)
+  {
+    session_unset();
+    header('Location:rider_login.php');
+  }
+}else{
+  header('Location:rider_login.php');
 }
   $firstname = $_SESSION['user_details']['first_name'];
   $lastname = $_SESSION['user_details']['last_name'];
@@ -54,7 +61,7 @@ $result = $database->viewBodaDetails();
     	<div class="card-header">
     		<div class="row">
     			<div class="col">
-    				<h3>Recent Applications</h3>
+    				<h3>Registered Motorcycles</h3>
     			</div>
     			<div class="col text-right">
     				<a href="boda_details.php" style="margin-left: 504px;"class="btn btn-success">Make Application</a>
