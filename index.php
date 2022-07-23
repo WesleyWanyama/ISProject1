@@ -8,7 +8,7 @@
   <script src="https://kit.fontawesome.com/6b18a8acf7.js" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/7571e7ef19.js" crossorigin="anonymous"></script>
 
-  <title>Rider Home</title>
+  <title>Home</title>
 </head>
 <body>
   <!-- NAVBAR -->
