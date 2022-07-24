@@ -15,7 +15,7 @@ if(isset($_POST) & !empty($_POST)){
 	$fileName = $_FILES['certificate_of_good_conduct']['name'];
 	$tmpName = $_FILES['certificate_of_good_conduct']['tmp_name'];
 	$fileSize = $_FILES['certificate_of_good_conduct']['size'];
-	$fileType = $_FILES['certificate_of_good_conduct ']['type'];
+	$fileType = $_FILES['certificate_of_good_conduct']['type'];
     $certificate_of_good_conduct = addslashes(file_get_contents($_FILES['certificate_of_good_conduct']['tmp_name']));
 
 } 
