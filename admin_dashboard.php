@@ -42,6 +42,41 @@ if(!isset($_SESSION['admin_details']))
     <a href="rider_logout.php"><button type="button" class="btn btn-secondary">Logout</button></a>
   </div>
 </nav>
+<!-- PHP CODE TO GET THE NUMBER OF ROWS FROM THE TABLES -->
+<?php
+require_once('procedural_db_connection.php');
+//number of registered Riderss
+$sql = "SELECT * FROM rider";
+if($result = mysqli_query($conn,$sql)){
+  $rowcount = mysqli_num_rows($result);
+}
+//number of registration applications
+$sql2 = "SELECT * FROM registration_details";
+if($result2 = mysqli_query($conn,$sql2)){
+  $rowcount2 = mysqli_num_rows($result2);
+}
+//number of registered motorocycles
+$sql3 = "SELECT * FROM boda_bodas";
+if($result3 = mysqli_query($conn,$sql3)){
+  $rowcount3 = mysqli_num_rows($result3);
+}
+?>
+<!-- DISPLAY OF DATA INFORMATION -->
+<div class="row align-items-center" style="margin-top:50px; margin-left: 10px; margin-right: 10px;">
+    <div class="col" style="background-color: green; height: 130px;">
+      <h3 style="color: white;">Number of Registered Riders:</h3><br><br>
+      <h5 style="text-align:center; color: white;"><?php echo $rowcount;?></h5>
+    </div>
+    <div class="col" style="background-color: green; height: 130px; margin-left: 20px;">
+      <h3 style="color: white;">Number of Registration Applications:</h3><br>
+      <h5 style="text-align:center; color: white;"><?php echo $rowcount2;?></h5>
+      
+    </div>
+    <div class="col" style="background-color: green; height: 130px; margin-left:20px;">
+      <h3 style="color: white;">Number of Registered Motorcycles:</h3><br>
+      <h5 style="text-align:center; color: white;"><?php echo $rowcount3;?></h5>
+    </div>
+  </div>
    
 </body>
 

@@ -74,6 +74,7 @@ if(!isset($_SESSION['user_details']))
               <th>Weight</th>
               <th>County</th> 
               <th>Registration Status</th>
+              <th>Action</th>
             </tr>
 
             <!-- PHP CODE TO FETCH FROM THE DATABASE AND DISPLAY IN THE TABLE -->
@@ -97,6 +98,7 @@ if(!isset($_SESSION['user_details']))
                   <td><?php echo $row["weight"]; ?></td>
                   <td><?php echo $row["county"]; ?></td>
                   <td><?php echo $row["registration_status"]; ?></td>
+                  <td><a href="update_boda_details.php?registration_id=<?php echo $row["registration_ID"]; ?>"><button type="button" class="btn btn-info">Edit</button></a></td>
                 </tr>
 
                <?php } ?>
