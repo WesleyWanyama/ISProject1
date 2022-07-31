@@ -6,7 +6,7 @@ if(count($_POST)>0){
   if(mysqli_query($conn,$sql)){
     $message = "Record Modified Successfully";
   }else{
-    echo "Error updating record";
+    echo "Error updating record"; 
   }
 }
 
