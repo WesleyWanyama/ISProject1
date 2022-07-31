@@ -81,7 +81,7 @@ if(!isset($_SESSION['user_details']))
             <?php
             require_once('procedural_db_connection.php');
             $sql = "SELECT * FROM registration_details where rider_ID = '$ID'";
-            $result = mysqli_query($conn,$sql);
+            $result = mysqli_query($conn,$sql); 
             if(mysqli_num_rows($result) > 0){
               ?>
               <?php
