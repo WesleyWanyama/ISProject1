@@ -1,7 +1,7 @@
 <?php
 $servername = '127.0.0.1';
 $serveruser = 'root';
-$serverpassword = '';
+$serverpassword = ''; 
 $database = 'is_project1';
 $conn=mysqli_connect($servername,$serveruser,$serverpassword,$database);
 
@@ -21,6 +21,8 @@ mysqli_query($conn,"INSERT INTO Boda_bodas (rider_ID,number_plate,registration_d
 if(!mysqli_commit($conn)){
 	echo "Commit transaction failed";
 	exit();
+}else{
+	header("Location: view_boda_details.php");
 }
 
 //Close connection

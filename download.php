@@ -7,7 +7,7 @@ $result = mysqli_query($conn,$sql);
 if(mysqli_num_rows($result) == 0){
 	die("File does not exist");
 }
-$row = mysqli_fetch_assoc($result);
+$row = mysqli_fetch_assoc($result); 
 $size = $row["fileSize"];
 $type = $row["fileType"];
 $name = $row["fileName"];
