@@ -2,7 +2,7 @@
 
 function getData($sql){
 $servername = '127.0.0.1';
-$serveruser = 'root';
+$serveruser = 'root'; 
 $serverpassword = '';
 $database = 'is_project1';  
 

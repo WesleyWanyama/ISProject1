@@ -92,7 +92,7 @@ if(!isset($_SESSION['user_details']))
   </div>
   <div class="col-7">
     <label for="krapin" class="form-label">Enter KRA PIN</label>
-    <input type="text" name="KRA_pin" class="form-control" id="inputAddress" >
+    <input type="text" name="KRA_pin" pattern="[A-Za-z0-9]{1,11}" class="form-control" id="inputAddress" >
   </div>
   <div class="col-7">
     <label for="inputAddress2" class="form-label">Upload Certificate of Good Conduct</label><br>
@@ -162,7 +162,7 @@ if(!isset($_SESSION['user_details']))
     <input type="text" name="model" class="form-control" id="model">
   </div>
   <div class="col-md-3">
-    <label for="inputZip" class="form-label">Weight</label>
+    <label for="inputZip" class="form-label">Weight(Kg)</label>
     <input type="text" name="weight" class="form-control" id="weight">
   </div>
   <div class="col-12">

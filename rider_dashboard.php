@@ -19,7 +19,7 @@ if(isset($_SESSION['user_details']))
   require_once('database.php');
 $result = $database->viewBodaDetails();
 ?>
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 <head>
 	<meta charset="utf-8"> 
@@ -80,7 +80,7 @@ $result = $database->viewBodaDetails();
     					<th>Model</th>
     					<th>Weight</th>
               <th>Action</th>
-    				</tr>
+    				</tr> 
 
     				<!-- PHP CODE TO FETCH FROM THE DATABASE AND DISPLAY IN THE TABLE -->
             <?php

@@ -1,6 +1,6 @@
 <?php 
 
-require_once('database.php');
+require_once('database.php'); 
  
 if(isset($_POST) & !empty($_POST)){
 	$rider_ID = $database -> sanitize($_POST['rider_ID']);
@@ -21,7 +21,7 @@ if(isset($_POST) & !empty($_POST)){
 } 
 $result = $database->registerBoda($rider_ID,$number_plate,$national_ID_number,$KRA_pin,$certificate_of_good_conduct,$fileName,$fileSize,$fileType,$make,$model,$weight,$county);
 if($result){
-	echo "Successfully inserted data";
+	header("Location: rider_dashboard.php");
 }else{
 	echo "failed to insert data";
 } 
