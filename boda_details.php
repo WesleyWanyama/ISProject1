@@ -66,7 +66,7 @@ if(!isset($_SESSION['user_details']))
       <div class="col-7">
         <label for="numberplate" class="form-label">Rider ID</label>
       <select class="form-select" aria-label="Default select example" name="rider_ID" required>
-        <!-- <option selected>Rider ID</option> -->
+    
         <?php
       while($row = $result->fetch_assoc()){
         ?>
