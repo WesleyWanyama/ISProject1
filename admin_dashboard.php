@@ -47,7 +47,7 @@ if(!isset($_SESSION['admin_details']))
 require_once('procedural_db_connection.php');
 //number of registered Riderss
 $sql = "SELECT * FROM rider";
-if($result = mysqli_query($conn,$sql)){
+if($result = mysqli_query($conn,$sql)){ 
   $rowcount = mysqli_num_rows($result);
 }
 //number of registration applications
